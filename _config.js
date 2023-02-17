@@ -6,9 +6,9 @@ config.mongoURI = {
 //     development: 'mongodb+srv://donny:donny@gallery.wc344.mongodb.net/darkroom-dev?retryWrites=true&w=majority',
 //     test: 'mongodb+srv://<donny>:donny@gallery.wc344.mongodb.net/darkroom-test?retryWrites=true&w=majority',
     
-//     production: 'mongodb+srv://donny:donny@cluster0.4wiroeu.mongodb.net/?retryWrites=true&w=majority',
-//     development: 'mongodb+srv://donny:donny@cluster0.4wiroeu.mongodb.net/?retryWrites=true&w=majority',
-//     test: 'mongodb+srv://donny:donny@cluster0.4wiroeu.mongodb.net/?retryWrites=true&w=majority',
+    production: 'mongodb+srv://donny:donny@cluster0.4wiroeu.mongodb.net/?retryWrites=true&w=majority',
+    development: 'mongodb+srv://donny:donny@cluster0.4wiroeu.mongodb.net/?retryWrites=true&w=majority',
+    test: 'mongodb+srv://donny:donny@cluster0.4wiroeu.mongodb.net/?retryWrites=true&w=majority',
     
 
 }
