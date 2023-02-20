@@ -8,18 +8,21 @@ let index = require('./routes/index');
 let image = require('./routes/image');
 
 // connecting the database
-let mongodb_url = 'mongodb://localhost:27017/';
-let dbName = 'darkroom';
-mongoose.connect(`${mongodb_url}${dbName}`,{ useNewUrlParser: true , useUnifiedTopology: true }, (err)=>{
-    if (err) console.log(err)
-});
 
-// test if the database has connected successfully
-let db = mongoose.connection;
-db.once('open', ()=>{
-    console.log('Database connected successfully')
-})
+const db = mongoose;
+const SERVER_DB_URI= 'mongodb+srv://Sheila:Sheila%408@trackieapi.ss0ark2.mongodb.net/?retryWrites=true&w=majority';
 
+const connectDB = async () => {
+  try {
+    await db.connect(SERVER_DB_URI,{useNewUrlParser:true,useUnifiedTopology: true},()=>{
+      console.log("Connected to DB!");
+    })
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+connectDB();
 // Initializing the app
 const app = express();
 
