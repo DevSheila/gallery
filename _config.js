@@ -10,6 +10,8 @@ config.mongoURI = {
     production: 'mongodb+srv://Sheila:Sheila%408@trackieapi.ss0ark2.mongodb.net/?retryWrites=true&w=majority',
     development: 'mongodb+srv://Sheila:Sheila%408@trackieapi.ss0ark2.mongodb.net/?retryWrites=true&w=majority',
     test: 'mongodb+srv://Sheila:Sheila%408@trackieapi.ss0ark2.mongodb.net/?retryWrites=true&w=majority',
-    
+   
+    //configuring mongo db
+
 }
 module.exports = config;
