@@ -17,7 +17,7 @@ pipeline{
         stage('Deploy to Heroku') {
           steps {
             withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
-              bat 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/guarded-reaches-34531.git master'
+              bat 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/gallery-devopss.git master'
             }
           }
         } 
