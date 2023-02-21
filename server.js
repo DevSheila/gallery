@@ -9,7 +9,7 @@ let index = require('./routes/index');
 let image = require('./routes/image');
 
 // Initializing the app
-const app = express();
+// const app = express();
 
 // connecting the database
 
