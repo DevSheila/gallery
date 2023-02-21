@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    tools{
+        nodejs 'Node JS 19'
+    }
+    stages{
+        stage('Clone Repo'){
+            steps{
+                git 'https://github.com/DevSheila/gallery.git'
+            }
+        }
+        stage('Build'){
+            steps{
+                bat 'npm install'
+            }
+        }
+        stage('Deploy to Heroku') {
+          steps {
+            withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
+              bat 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/guarded-reaches-34531.git master'
+            }
+          }
+        } 
+   }
+}
