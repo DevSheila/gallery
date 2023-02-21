@@ -23,6 +23,7 @@ pipeline{
           steps {
             withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
               bat 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/guarded-reaches-34531.git master'
+              slackSend( channel: "#sheila-ip1", token: "slack_webhook token", color: "good", message: "Build ${currentBuild.number} is live on https://gallery-devopss.herokuapp.com/")
             }
           }
         } 
