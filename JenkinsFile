@@ -32,7 +32,7 @@ pipeline{
         failure{
             emailext to: 'sheilasharon10@gmail.com',
             subject: "Build ${currentBuild.number}  failure", 
-            body: "build${currentBuild.number}  has failed  "
+            body: "Build${currentBuild.number}  on job ${env.JOB_NAME}has failed  "
         }
     }
 }
