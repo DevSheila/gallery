@@ -11,12 +11,12 @@ pipeline{
         }
         stage('Build'){
             steps{
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('Test'){
             steps{
-                bat 'npm test'
+                sh 'npm test'
             }
         }
         stage('Deploy to Heroku') {
@@ -31,8 +31,8 @@ pipeline{
    post{
         failure{
             emailext to: 'sheilasharon10@gmail.com',
-            subject: "Build failure", 
-            body: "The current build has failed  "
+            subject: "Build ${currentBuild.number}  failure", 
+            body: "build${currentBuild.number}  has failed  "
         }
     }
 }
