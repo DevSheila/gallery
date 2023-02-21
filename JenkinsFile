@@ -27,4 +27,11 @@ pipeline{
           }
         } 
    }
+   post{
+        failure{
+            emailext to: 'sheilasharon10@gmail.com',
+            subject: "Build failure", 
+            body: "The current build has failed  "
+        }
+    }
 }
